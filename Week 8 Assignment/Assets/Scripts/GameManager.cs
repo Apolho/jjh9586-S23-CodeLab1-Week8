@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         switch (dir)
         {
             case 0: //location 1
-                currentLocation = currentLocation.location1;
+                currentLocation = currentLocation.location1; //makes current location the one clicked in the button
                 break;
             case 1: //location2
                 currentLocation = currentLocation.location2;
@@ -79,18 +79,18 @@ public class GameManager : MonoBehaviour
         }
       
         
-        UpdateLocation();
+        UpdateLocation(); //calls update location function
     }
 
     void Objects()
     {
-        title.text = currentObject.objectName;
-        description.text = currentObject.objectDescription;
+        title.text = currentObject.objectName; //changes title text to the object name
+        description.text = currentObject.objectDescription; //changes description text to the object description
         
-        search2.gameObject.SetActive(false);
+        search2.gameObject.SetActive(false); //deactivates object buttons
         search1.gameObject.SetActive(false);
         
-        back.gameObject.SetActive(true);
+        back.gameObject.SetActive(true); //activates back button
     }
 
     public void Search(int obj)
@@ -98,22 +98,22 @@ public class GameManager : MonoBehaviour
         switch (obj)
         {
             case 0:
-                currentObject = currentLocation.object1;
+                currentObject = currentLocation.object1; //makes current object the object button pressed
                 break;
             case 1:
                 currentObject = currentLocation.object2;
                 break;
         }
         
-        Objects();
+        Objects(); //calls object function
     }
 
     public void Back()
     {
-        title.text = currentLocation.locationName;
+        title.text = currentLocation.locationName; 
         description.text = currentLocation.locationExitDescription;
         
-        back.gameObject.SetActive(false);
+        back.gameObject.SetActive(false); //deactivates back button
         
         location1Button.gameObject.SetActive(true);
         location2Button.gameObject.SetActive(true);
